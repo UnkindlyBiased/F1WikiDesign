@@ -10,8 +10,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.litekreu.f1wikidesign.items.F1NavBar
-import com.litekreu.f1wikidesign.items.NavRoutes
+import com.litekreu.f1wikidesign.presentation.F1NavBar
+import com.litekreu.f1wikidesign.presentation.HomeScreen
+import com.litekreu.f1wikidesign.presentation.NavRoutes
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
@@ -24,7 +25,7 @@ fun NavigationPoint(navController: NavHostController = rememberNavController()) 
     ) {
         NavHost(navController = navController, startDestination = NavRoutes.Discover.route) {
             composable(NavRoutes.Discover.route) {
-                Text(text = "Screen 1")
+                HomeScreen()
             }
             composable(NavRoutes.GrandsPrix.route) {
                 Text(text = "Screen 2")

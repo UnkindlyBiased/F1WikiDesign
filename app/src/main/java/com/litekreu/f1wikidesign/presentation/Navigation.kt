@@ -1,4 +1,4 @@
-package com.litekreu.f1wikidesign.items
+package com.litekreu.f1wikidesign.presentation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
@@ -18,6 +18,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.litekreu.f1wikidesign.ui.theme.regular
 
 @Composable
 fun F1NavBar(
@@ -28,11 +29,17 @@ fun F1NavBar(
 
     NavigationBar {
         NavRoutes.routesList.forEach { navItem ->
+            val isSelected = route == navItem.route
             NavigationBarItem(
-                selected = route == navItem.route,
+                selected = isSelected,
                 onClick = { navController.navigate(navItem.route) },
-                icon = { Icon(imageVector = navItem.selectedIcon, contentDescription = navItem.route) },
-                label = { Text(text = navItem.route) }
+                icon = { Icon(imageVector =
+                    if (isSelected) navItem.selectedIcon else navItem.unselectedIcon,
+                    contentDescription = navItem.route) },
+                label = { Text(
+                    text = navItem.route,
+                    fontFamily = regular
+                ) }
             )
         }
     }
@@ -45,7 +52,7 @@ object NavRoutes {
         unselectedIcon = Icons.Outlined.Home
     )
     val GrandsPrix = NavItem(
-        route = "Grand Prixs",
+        route = "Grands Prix",
         selectedIcon = Icons.Filled.DateRange,
         unselectedIcon = Icons.Outlined.DateRange
     )

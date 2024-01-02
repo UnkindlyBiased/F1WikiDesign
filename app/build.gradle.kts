@@ -67,6 +67,9 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    //Navigation
+    // Navigation
     implementation("androidx.navigation:navigation-compose:2.7.6")
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.5.0")
 }
