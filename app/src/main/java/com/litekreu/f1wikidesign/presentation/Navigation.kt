@@ -33,8 +33,8 @@ fun F1NavBar(
             NavigationBarItem(
                 selected = isSelected,
                 onClick = { navController.navigate(navItem.route) },
-                icon = { Icon(imageVector =
-                    if (isSelected) navItem.selectedIcon else navItem.unselectedIcon,
+                icon = { Icon(imageVector = if (isSelected) navItem.selectedIcon
+                        else navItem.unselectedIcon,
                     contentDescription = navItem.route) },
                 label = { Text(
                     text = navItem.route,

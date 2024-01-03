@@ -17,6 +17,9 @@ val torque = FontFamily(listOf(
 val turbo = FontFamily(listOf(
     Font(R.font.turbo)
 ))
+val black = FontFamily(listOf(
+    Font(R.font.black)
+))
 
 // Set of Material typography styles to start with
 val Typography = Typography(

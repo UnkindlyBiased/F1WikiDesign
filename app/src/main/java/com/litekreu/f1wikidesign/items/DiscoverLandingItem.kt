@@ -19,7 +19,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.litekreu.f1wikidesign.ui.theme.turbo
+import com.litekreu.f1wikidesign.ui.theme.black
 
 @Composable
 fun DiscoverLandingItem(
@@ -43,8 +43,8 @@ fun DiscoverLandingItem(
             ) {
                 Text(
                     text = landingText,
-                    fontFamily = turbo,
-                    fontSize = 14.sp,
+                    fontFamily = black,
+                    fontSize = 22.sp,
                     color = Color.White
                 )
             }
