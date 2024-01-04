@@ -1,5 +1,7 @@
 package com.litekreu.f1wikidesign.presentation
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Face
@@ -9,21 +11,27 @@ import androidx.compose.material.icons.outlined.DateRange
 import androidx.compose.material.icons.outlined.Face
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.List
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.litekreu.f1wikidesign.fakedata.LandingItemsData
 import com.litekreu.f1wikidesign.ui.theme.regular
 
 @Composable
-fun F1NavBar(
-    navController: NavController
-) {
+fun F1NavBar(navController: NavController) {
+
     val currentBackStackEntry by navController.currentBackStackEntryAsState()
     val route = currentBackStackEntry?.destination?.route
 
@@ -43,6 +51,22 @@ fun F1NavBar(
             )
         }
     }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun LogoTopBar() {
+    TopAppBar(title = {
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+
+        }
+    },
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = MaterialTheme.colorScheme.primary
+        ))
 }
 
 object NavRoutes {
@@ -74,3 +98,4 @@ data class NavItem(
     val selectedIcon: ImageVector,
     val unselectedIcon: ImageVector
 )
+

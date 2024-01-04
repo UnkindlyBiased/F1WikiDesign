@@ -1,7 +1,7 @@
 package com.litekreu.f1wikidesign
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -12,18 +12,25 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.litekreu.f1wikidesign.presentation.F1NavBar
 import com.litekreu.f1wikidesign.presentation.HomeScreen
+import com.litekreu.f1wikidesign.presentation.LogoTopBar
 import com.litekreu.f1wikidesign.presentation.NavRoutes
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun NavigationPoint(navController: NavHostController = rememberNavController()) {
     Scaffold(
+        topBar = {
+            LogoTopBar()
+        },
         bottomBar = {
             F1NavBar(navController)
         },
         modifier = Modifier.fillMaxSize()
-    ) {
-        NavHost(navController = navController, startDestination = NavRoutes.Discover.route) {
+    ) { padding ->
+        NavHost(
+            navController = navController,
+            startDestination = NavRoutes.Discover.route,
+            modifier = Modifier.padding(padding)
+        ) {
             composable(NavRoutes.Discover.route) {
                 HomeScreen()
             }

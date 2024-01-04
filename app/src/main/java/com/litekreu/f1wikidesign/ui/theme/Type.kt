@@ -14,8 +14,8 @@ val regular = FontFamily(listOf(
 val torque = FontFamily(listOf(
     Font(R.font.torque)
 ))
-val turbo = FontFamily(listOf(
-    Font(R.font.turbo)
+val wide = FontFamily(listOf(
+    Font(R.font.wide)
 ))
 val black = FontFamily(listOf(
     Font(R.font.black)
