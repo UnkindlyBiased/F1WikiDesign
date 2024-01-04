@@ -1,4 +1,4 @@
-package com.litekreu.f1wikidesign.items
+package com.litekreu.f1wikidesign.items.discover
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

@@ -38,6 +38,7 @@ object LandingItemsData {
 object NewsData {
     data class ArticleTemplate(
         val title: String,
+        val image: String,
         val type: ArticleType,
         val isFeature: Boolean = false
     )
@@ -51,6 +52,7 @@ object NewsData {
     val Value = listOf(
         ArticleTemplate(
             title = "F2 front-runner Bearman has ‘no doubt’ he’d be ready for F1 chance in 2025",
+            image = "https://media.formula1.com/image/upload/f_auto/q_auto/v1704209578/fom-website/2023/Miscellaneous/bearman-f2-2023-3.png.transform/9col/image.png",
             type = ArticleType.NEWS
         )
     )
