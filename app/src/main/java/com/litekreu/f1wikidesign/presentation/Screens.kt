@@ -3,14 +3,15 @@ package com.litekreu.f1wikidesign.presentation
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.LinearProgressIndicator
@@ -36,23 +37,21 @@ fun HomeScreen() {
         val spacerHeight = Modifier.height(8.dp)
         Spacer(modifier = spacerHeight)
 
-        LazyRow {
-            item {
-                LandingItemsData.Value.forEach { item ->
-                    DiscoverLandingItem(item)
-                }
+        LazyRow(
+            contentPadding = PaddingValues(horizontal = 8.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            items(LandingItemsData.Value) { item ->
+                DiscoverLandingItem(data = item)
             }
         }
 
-//        LazyVerticalGrid(columns = GridCells.Fixed(2)) {
-//            items(3) {
-//                NewsData.Value.forEach { article ->
-//                    ArticleItem(item = article)
-//                }
-//            }
-//        }
-        Column {
-            repeat(5) {
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(2),
+            contentPadding = PaddingValues(horizontal = 16.dp),
+            modifier = Modifier.height(520.dp)
+        ) {
+            items(3) {
                 NewsData.Value.forEach { article ->
                     ArticleItem(item = article)
                 }

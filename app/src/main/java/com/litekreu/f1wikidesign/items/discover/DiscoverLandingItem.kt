@@ -27,7 +27,6 @@ fun DiscoverLandingItem(
     data: LandingItemsData.LandingTemplate
 ) {
     Row {
-        Spacer(modifier = Modifier.width(4.dp))
         Card(modifier = Modifier
             .width(356.dp)
             .height(160.dp)
@@ -57,6 +56,5 @@ fun DiscoverLandingItem(
                 }
             }
         }
-        Spacer(modifier = Modifier.width(4.dp))
     }
 }
